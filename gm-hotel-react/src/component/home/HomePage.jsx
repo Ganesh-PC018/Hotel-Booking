@@ -1,0 +1,70 @@
+import React from 'react';
+import {useState,useEffect} from 'react'
+import { NavLink,useNavigate } from 'react-router-dom';
+import RoomSearch from '../common/RoomSearch.jsx';
+import RoomResult from '../common/RoomResult.jsx'
+function HomePage(){
+    const [roomSearchResults,setRoomSearchResults] = useState([])
+    const handleSearchResult = (result) =>{
+        setRoomSearchResults(result);
+        console.log(result);
+    }
+   return (
+        <div className='home'>
+            <section>
+                <header className='header-banner'>
+                    <img src="src/assets/images/Wallpaper_Hotel.jpg" alt="Hotel home page" className='header-image'/>
+                    <div className='overlay'>
+                    <div className='animated-texts overlay-content'>
+                        <h1 id='titleName-header'>
+                        Welcome to <span className='hotelCover-color'>GM International</span>
+                        </h1>
+                        <h3 id='quote-hotel'>Step into a haven of comfort and care.</h3>
+                    </div>
+                    </div>
+                </header>
+            </section>
+            {/* <section> */}
+            <div className="search-box">
+                <RoomSearch handleSearchResult={handleSearchResult}/>
+                {roomSearchResults && <RoomResult roomSearchResults={roomSearchResults}/>}
+            </div>
+            {/* </section> */}
+            <h4><a className='view-rooms-home' href='/rooms'>All Rooms</a></h4>
+            <h2 className='home-services'> Services At <span className='hotelCover-color'>GM International</span></h2>
+            <section className='service-section'>
+                <div className='service-card'>
+                    <img src='src/assets/images/air-conditioner.png' alt='Air Conditioning'/>
+                    <div className="service-details">
+                        <h3 className='service-title'>Air Conditioning</h3>
+                        <p className="service-description">Stay cool and comfortable throughout your stay with our individually controlled in-room air Conditioning.</p>
+                    </div>
+                </div>
+                <div className="service-card">
+                    <img src="src/assets/images/mini-bar.png" alt="Mini Bar"/>
+                    <div className="service-details">
+                        <h3 className="service-title">Mini Bar</h3>
+                        <p className="service-description">Enjoy a convenient Selection of beverages and snacks stocked in your room's mini bar with no additional cost.</p>
+                    </div>
+                </div>
+                                <div className="service-card">
+                    <img src="src/assets/images/parking.png" alt="Parking" />
+                    <div className="service-details">
+                        <h3 className="service-title">Parking</h3>
+                        <p className="service-description">We offer on-site parking for your convenience . Please inquire about valet parking options if available.</p>
+                    </div>
+                </div>
+                <div className="service-card">
+                    <img src="src/assets/images/wifi.png" alt="WiFi" />
+                    <div className="service-details">
+                        <h3 className="service-title">WiFi</h3>
+                        <p className="service-description">Stay connected throughout your stay with complimentary high-speed Wi-Fi access available in all guest rooms and public areas.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+   )
+}   
+
+export default HomePage;
