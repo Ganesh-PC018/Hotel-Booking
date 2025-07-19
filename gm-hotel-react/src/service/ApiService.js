@@ -16,7 +16,7 @@ import { Await } from "react-router-dom";
     !!token --> giving you the actual boolean value;
 */
 export default class ApiService {
-  static BASE_URL = import.meta.env.REACT_APP_HOTEL_BACKEND_URL || "http://localhost:8080";
+static BASE_URL = import.meta.env.VITE_HOTEL_BACKEND_URL || "http://localhost:8080";
   static getHeader() {
     const token = localStorage.getItem("token");
     // const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5lLmdhbmVzaC5wY0BnbWFpbC5jb20iLCJpYXQiOjE3NTA1Njg3MDksImV4cCI6MTc1MDU3ODc4OX0.6OsQZj_8gkkBsknijxYW0wekLe2f-ulho9DVCF_z9Po";
