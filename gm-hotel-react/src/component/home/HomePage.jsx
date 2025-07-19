@@ -3,7 +3,13 @@ import {useState,useEffect} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom';
 import RoomSearch from '../common/RoomSearch.jsx';
 import RoomResult from '../common/RoomResult.jsx'
-function HomePage(){
+import {backgroundImage} from 'src/assets/images/Wallpaper_Hotel.jpg';
+import {airConditioning} from 'src/assets/images/air-conditioner.png';
+import {minibar} from  'src/assets/images/mini-bar.png';
+import {parking} from 'src/assets/images/parking.png';
+import {wifi} from 'src/assets/images/wifi.png';
+
+function HomePage(){ 
     const [roomSearchResults,setRoomSearchResults] = useState([])
     const handleSearchResult = (result) =>{
         setRoomSearchResults(result);
@@ -13,7 +19,7 @@ function HomePage(){
         <div className='home'>
             <section>
                 <header className='header-banner'>
-                    <img src="src/assets/images/Wallpaper_Hotel.jpg" alt="Hotel home page" className='header-image'/>
+                    <img src={backgroundImage} alt="Hotel home page" className='header-image'/>
                     <div className='overlay'>
                     <div className='animated-texts overlay-content'>
                         <h1 id='titleName-header'>
@@ -34,28 +40,28 @@ function HomePage(){
             <h2 className='home-services'> Services At <span className='hotelCover-color'>GM International</span></h2>
             <section className='service-section'>
                 <div className='service-card'>
-                    <img src='src/assets/images/air-conditioner.png' alt='Air Conditioning'/>
+                    <img src={airConditioning} alt='Air Conditioning'/>
                     <div className="service-details">
                         <h3 className='service-title'>Air Conditioning</h3>
                         <p className="service-description">Stay cool and comfortable throughout your stay with our individually controlled in-room air Conditioning.</p>
                     </div>
                 </div>
                 <div className="service-card">
-                    <img src="src/assets/images/mini-bar.png" alt="Mini Bar"/>
+                    <img src={minibar} alt="Mini Bar"/>
                     <div className="service-details">
                         <h3 className="service-title">Mini Bar</h3>
                         <p className="service-description">Enjoy a convenient Selection of beverages and snacks stocked in your room's mini bar with no additional cost.</p>
                     </div>
                 </div>
-                                <div className="service-card">
-                    <img src="src/assets/images/parking.png" alt="Parking" />
+                <div className="service-card">
+                    <img src={parking} alt="Parking" />
                     <div className="service-details">
                         <h3 className="service-title">Parking</h3>
                         <p className="service-description">We offer on-site parking for your convenience . Please inquire about valet parking options if available.</p>
                     </div>
                 </div>
                 <div className="service-card">
-                    <img src="src/assets/images/wifi.png" alt="WiFi" />
+                    <img src={wifi} alt="WiFi" />
                     <div className="service-details">
                         <h3 className="service-title">WiFi</h3>
                         <p className="service-description">Stay connected throughout your stay with complimentary high-speed Wi-Fi access available in all guest rooms and public areas.</p>
