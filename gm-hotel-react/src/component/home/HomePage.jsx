@@ -3,11 +3,12 @@ import {useState,useEffect} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom';
 import RoomSearch from '../common/RoomSearch.jsx';
 import RoomResult from '../common/RoomResult.jsx'
-import {backgroundImage} from 'src/assets/images/Wallpaper_Hotel.jpg';
-import {airConditioning} from 'src/assets/images/air-conditioner.png';
-import {minibar} from  'src/assets/images/mini-bar.png';
-import {parking} from 'src/assets/images/parking.png';
-import {wifi} from 'src/assets/images/wifi.png';
+import backgroundImage from '../../assets/images/Wallpaper_Hotel.jpg';
+import airConditioning from '../../assets/images/air-conditioner.png';
+import minibar from '../../assets/images/mini-bar.png';
+import parking from '../../assets/images/parking.png';
+import wifi from '../../assets/images/wifi.png';
+
 
 function HomePage(){ 
     const [roomSearchResults,setRoomSearchResults] = useState([])
